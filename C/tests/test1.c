@@ -14,13 +14,17 @@ int contains_number(int id,int keyword);
 int main(void){
   //Declaring the library 
   student_t* library[SIZE];
-  int index=0; //each elment has an index in the library 
+  int index=0,n=0; //each elment has an index in the library 
   student_t s1={.id= 79945,.name= "iliass jabali"};
   student_t s2={.id= 95163,.name= "full name"};
   add_student(library, &s1, index++);
   add_student(library, &s2, index++);
-  
-  printf("The book is at: %d\n",search_by_id(library, 79945, index));
+  printf("Enter an ID to search ");
+  scanf("%d",&n);
+  if(search_by_id(library, n, index)>=0)
+    printf("The student is at: %d\n",search_by_id(library, n, index));
+  else
+    printf("The student is not found\n");
   return 0;
 }
 //adding book to library 
