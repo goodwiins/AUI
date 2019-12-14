@@ -12,7 +12,6 @@ int search_by_id(student_t* library[],int, int index);
 int contains_number(int id,int keyword);
 
 int main(void){
-  int keyword;
   //Declaring the library 
   student_t* library[SIZE];
   int index=0; //each elment has an index in the library 
