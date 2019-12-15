@@ -16,7 +16,7 @@ int main(void){
   int index=0,n=0,i; //each elment has an index in the library 
   student_t s1={.id= 79945,.name= "iliass jabali"};
   student_t s2={.id= 95163,.name= "full name"};
-  student_t s3={.id= 80116,.name= "bouta"};
+  student_t s3={.id= 80116,.name= "bouya"};
   add_student(library, &s1, index++);
   add_student(library, &s2, index++);
   add_student(library, &s3, index++);
