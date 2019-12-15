@@ -8,7 +8,8 @@ typedef struct{
 }student_t;
 //Defining the functions
 void add_student(student_t* library[], student_t* , int index); 
-int search_by_id(student_t* library[],int, int index); 
+int search_by_id(student_t* library[],int, int index);
+void display_name(student_t*library[], int);
 
 int main(void){
   //Declaring the library 
@@ -16,12 +17,17 @@ int main(void){
   int index=0,n=0; //each elment has an index in the library 
   student_t s1={.id= 79945,.name= "iliass jabali"};
   student_t s2={.id= 95163,.name= "full name"};
+  student_t s3={.id= 80116,.name= "bouta"};
   add_student(library, &s1, index++);
   add_student(library, &s2, index++);
+  add_student(library, &s3, index++);
   printf("Enter an ID to search ");
   scanf("%d",&n);
-  if(search_by_id(library, n, index)>=0)
-    printf("The student is at: %d\n",search_by_id(library, n, index));
+  if(search_by_id(library, n, index)>=0){
+    printf("The student is at: %d\n",search_by_id(library, n, index)+1);
+    //printf("the Full name is %s\n"); 
+    display_name(library,search_by_id(library, n, index));
+  }  
   else
     printf("The student is not found\n");
   return 0;
@@ -37,3 +43,6 @@ int search_by_id(student_t* library[], int id, int index){
             return i;
     return -1;//-1 means it's not in the library 
 }  
+void display_name(student_t* library[], int i ){
+  printf("the full name of the id is: %s\n", library[i]->name);
+}
