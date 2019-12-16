@@ -17,12 +17,11 @@ void add(student_t* class[], int index);
 int main(void){
   //Declaring the class 
   student_t* class[SIZE];
-  int index=0,n=0,x,i,j; //each elment has an index in the class 
+  int index=0,n=0,i,j; //each elment has an index in the class 
   /*printf("how many student you want to add?  ");
   scanf("%d",&j);
-  for(i=0;i<j;i++){*/
-  add(class,index++);
-  printf("%d",index);
+  for(i=0;i<j;i++)*/
+    add(class,index++);
   printf("Enter an ID to search ");
   scanf("%d",&n);
   if(search_by_id(class, n, index)>=0){
@@ -34,16 +33,14 @@ int main(void){
   return 0;
 }
 
-//adding student to class 
-//Still in work plus, I should add 
 void add(student_t* class[], int index){
   student_t s;
   char *temp = (char*)malloc(50);
   printf("Enter a name\n");
-  //scanf("%s",&(s.name));
   gets(temp);
   printf("Enter a ID\n");
   scanf("%d",&(s.id));
+  s.name=temp;
   add_student(class, &s, index);
 }
 
