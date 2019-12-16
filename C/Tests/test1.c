@@ -43,19 +43,20 @@ int main(void){
           printf("\nThe full name is\n%s",class[search_by_id(class, n, index)]->name);
           printf("\nThe student is at: %d\n",search_by_id(class, n, index));
           printf("\n");
-        }  
+        } 
+        
         else
           printf("\nThe student is not found\n");
       break;
       case 3:
-        //search_by_name(class,index);
+        search_by_name(class,index);
         break;
       case 4:
         //display_all(class,index);
       case 5 :
         ;
     }
-    
+
   return 0;
 }
 
@@ -86,4 +87,9 @@ int search_by_id(student_t* class[], int id, int index){
         if (id == class[i]->id)
             return i;
     return -1;//-1 means it's not in the library
+}
+void search_by_name(student_t* class[], int index){
+  int i;
+  for(i=0;i<index;i++)
+    
 }
