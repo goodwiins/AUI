@@ -22,6 +22,7 @@ int main(void){
   scanf("%d",&j);
   for(i=0;i<j;i++){*/
   add(class,index++);
+  printf("%d",index);
   printf("Enter an ID to search ");
   scanf("%d",&n);
   if(search_by_id(class, n, index)>=0){
@@ -41,9 +42,8 @@ void add(student_t* class[], int index){
   printf("Enter a name\n");
   //scanf("%s",&(s.name));
   gets(temp);
-  printf("%s",temp);
   printf("Enter a ID\n");
-  //scanf("%d",&(s.id));
+  scanf("%d",&(s.id));
   add_student(class, &s, index);
 }
 
