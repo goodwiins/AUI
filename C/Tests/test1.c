@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
 #define SIZE 100
 
 //Defining the struct
@@ -63,15 +64,19 @@ int main(void){
 
 void add(student_t* class[], int index){
   student_t s;
+  int n;
   char *temp = (char*)malloc(50);
   printf("Enter a name\n");
   getchar();
   gets(temp);
   printf("Enter a ID\n");
-  scanf("%d",&(s.id));//STRING INPUT
-  s.name=temp;
-  //isDigit
-  //CONVERT IF 1 ELSE ERROR
+  scanf("%d",&n);//STRING INPUT
+  
+  if(isdigit(n))
+    s.id=n;
+  else
+    printf("The ID input is not a int\n");
+  
   add_student(class, &s, index);
 }
 
