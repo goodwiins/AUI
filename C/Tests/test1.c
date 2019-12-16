@@ -14,9 +14,9 @@ typedef struct{
 void add_student(student_t* class[], student_t* , int index);
 int search_by_id(student_t* class[],int, int index);
 void add(student_t* class[], int index);
-void search_by_name(student_t* class[], int index);
+int search_by_last_name(student_t* class[],char* keyword, int index);
 void display_by_index(student_t* class[], int index);
-
+int contains_keyword(char *title, const char *keyword);
 
 int main(void){
   //Declaring the class
@@ -88,8 +88,28 @@ int search_by_id(student_t* class[], int id, int index){
             return i;
     return -1;//-1 means it's not in the library
 }
-void search_by_name(student_t* class[], int index){
+void search_by_name(student_t* class[],char* keyword, int index){
   int i;
-  for(i=0;i<index;i++)
+  for(i=0;i<index;i++){
+    if(st)
+  }
     
+}
+int search_by_last_name(student_t* class[],char* keyword, int index){
+  int i;
+  for(i=0;i<index;i++){
+    if(contains_keyword(class[i]->name),keyword)
+      printf("yes");
+  }
+}
+int contains_keyword(char *title, const char *keyword) {
+    printf("Comparing %s against %s\n", title, keyword);
+    if (strlen(title) < strlen(keyword))
+        return 0;
+    if (strlen(title) == strlen(keyword))
+        return !strcmp(title, keyword);
+    if (!strncmp(title, keyword, strlen(keyword)))
+        return 1;
+    
+    return contains_keyword(++title, keyword);
 }
