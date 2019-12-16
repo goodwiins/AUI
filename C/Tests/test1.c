@@ -18,15 +18,23 @@ void add(student_t* class[], int index);
 int main(void){
   //Declaring the class 
   student_t* class[SIZE];
-  int index=0,n=0,i,j,q=1; //each elment has an index in the class 
-  printf("The options are: \n1)To add a student to the the class \n2)To search for a student by ID \n3)To search for a student by name \n4)to display the names and IDs in the class\n");
+  int index=0,n,i,j,q=1; //each elment has an index in the class
+  student_t s1={.id= 79945,.name= "iliass jabali"};
+  add_student(class, &s1, index++);
+  student_t s2={.id= 95163,.name= "full name"};
+  add_student(class, &s2, index++);
+  student_t s3={.id= 80116,.name= "bouta"}; 
+  add_student(class, &s3, index++);
+  //index is 3 at this stage
   while(q==1){
+
+    printf("The options are: \n1)To add a student to the the class \n2)To search for a student by ID \n3)To search for a student by name \n4)to display the names and IDs in the class\n");
     scanf("%d",&n);
+
     switch(n){
       case 1: 
         add(class,index++);
         break;
-
       case 2: 
         printf("Enter an ID to search ");
         scanf("%d",&n);
@@ -38,7 +46,7 @@ int main(void){
           printf("The student is not found\n");
       break;
       case 3:
-        
+        search_by_name()
         break;
       case 4:
         
@@ -47,7 +55,6 @@ int main(void){
         scanf("%d",&q);
         break;
     }
-
   }
   return 0;
 }
