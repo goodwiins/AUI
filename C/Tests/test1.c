@@ -30,7 +30,7 @@ int main(void){
   return 0;
 }
 //adding student to class 
-//Still in work
+//Still in work plus, I should add 
 void add(student_t* class[], int index){
   student_t s;
   printf("Enter a name\n");
