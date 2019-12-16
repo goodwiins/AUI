@@ -17,6 +17,8 @@ void add(student_t* class[], int index);
 int search_by_last_name(student_t* class[],char* keyword, int index);
 void display_by_index(student_t* class[], int index);
 int contains_keyword(char *title, const char *keyword);
+void display_all(student_t* class[], int index);
+
 
 int main(void){
   //Declaring the class
@@ -52,7 +54,7 @@ int main(void){
         search_by_name(class,index);
         break;
       case 4:
-        //display_all(class,index);
+        display_all(class,index);
       case 5 :
         ;
     }
@@ -80,6 +82,12 @@ void add(student_t* class[], int index){
 
 void add_student(student_t* class[], student_t *studentp, int index){
    class[index] = studentp;
+}
+void display_all(student_t* class[], int index){
+  int i;
+  for(i=0; i<index ; i++){
+    printf("the name is %s and ID is %d at position at %d\n",class[i]->name,class[i]->id,i);
+  }
 }
 int search_by_id(student_t* class[], int id, int index){
    int i;
