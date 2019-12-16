@@ -19,9 +19,9 @@ void display_by_index(student_t* class[], int index);
 
 
 int main(void){
+  //Declaring the class
   student_t* class[SIZE];
-  int index=0,n,i,j,q=1; 
-  
+  int index=0,n,i,j,q=1; //each elment has an index in the class
   student_t s1={.id= 79945,.name= "iliass jabali"};
   add_student(class, &s1, index++);
   student_t s2={.id= 95163,.name= "full name"};
@@ -29,7 +29,6 @@ int main(void){
   student_t s3={.id= 80116,.name= "bouta"};
   add_student(class, &s3, index++);
   //index is 3 at this stage
-  
   while(q==1){
 
     printf("The options are: \n1)To add a student to the the class \n2)To search for a student by ID \n3)To search for a student by name \n4)to display the names and IDs in the class\n");
@@ -43,8 +42,8 @@ int main(void){
         printf("Enter an ID to search ");
         scanf("%d",&n);
         if(search_by_id(class, n, index)>=0){
+          printf("The full name is %s\n",class[search_by_id(class, n, index)]->name);
           printf("The student is at: %d\n",search_by_id(class, n, index));
-          printf("The full name is %s\n",class[i]->name);
         }  
         else
           printf("The student is not found\n");
@@ -84,7 +83,6 @@ void add(student_t* class[], int index){
 void add_student(student_t* class[], student_t *studentp, int index){
    class[index] = studentp;
 }
-
 int search_by_id(student_t* class[], int id, int index){
    int i;
    for (i = 0; i < index; i++)
