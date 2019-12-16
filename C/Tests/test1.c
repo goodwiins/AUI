@@ -21,18 +21,16 @@ void display_by_index(student_t* class[], int index);
 int main(void){
   //Declaring the class
   student_t* class[SIZE];
-  int index=0,n,i,j,q=1; //each elment has an index in the class
+  int index=0,n; //each elment has an index in the class
   student_t s1={.id= 79945,.name= "iliass jabali"};
   add_student(class, &s1, index++);
   student_t s2={.id= 95163,.name= "full name"};
   add_student(class, &s2, index++);
   student_t s3={.id= 80116,.name= "bouta"};
   add_student(class, &s3, index++);
-  //index is 3 at this stage
-  while(q==1){
 
-    printf("The options are: \n1)To add a student to the the class \n2)To search for a student by ID \n3)To search for a student by name \n4)to display the names and IDs in the class\n");
-    scanf("%d",&n);
+  printf("The options are: \n1)To add a student to the the class \n2)To search for a student by ID \n3)To search for a student by name \n4)to display the names and IDs in the class\n5)To quite\n");
+  scanf("%d",&n);
 
     switch(n){
       case 1:
@@ -54,12 +52,10 @@ int main(void){
         break;
       case 4:
         //display_all(class,index);
-      default :
-        printf("to continue press 1\n");
-        scanf("%d",&q);
-        break;
+      case 5 :
+        ;
     }
-  }
+    
   return 0;
 }
 
