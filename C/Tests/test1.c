@@ -13,6 +13,8 @@ typedef struct{
 void add_student(student_t* class[], student_t* , int index); 
 int search_by_id(student_t* class[],int, int index);
 void add(student_t* class[], int index);
+void search_by_name(student_t* class[], int index);
+void display_by_index(student_t* class[], int index);
 
 
 int main(void){
@@ -46,10 +48,10 @@ int main(void){
           printf("The student is not found\n");
       break;
       case 3:
-        search_by_name()
+        search_by_name(class,index);
         break;
       case 4:
-        
+        display_all(class,index);
       default :
         printf("to continue press 1\n");
         scanf("%d",&q);
