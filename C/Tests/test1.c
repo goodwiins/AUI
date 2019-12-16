@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #define SIZE 100
 
 //Defining the struct
@@ -17,19 +18,37 @@ void add(student_t* class[], int index);
 int main(void){
   //Declaring the class 
   student_t* class[SIZE];
-  int index=0,n=0,i,j; //each elment has an index in the class 
-  /*printf("how many student you want to add?  ");
-  scanf("%d",&j);
-  for(i=0;i<j;i++)*/
-    add(class,index++);
-  printf("Enter an ID to search ");
-  scanf("%d",&n);
-  if(search_by_id(class, n, index)>=0){
-    printf("The student is at: %d\n",search_by_id(class, n, index));
-    printf("The full name is %s\n",class[i]->name); 
-  }  
-  else
-    printf("The student is not found\n");
+  int index=0,n=0,i,j,q=1; //each elment has an index in the class 
+  printf("The options are: \n1)To add a student to the the class \n2)To search for a student by ID \n3)To search for a student by name \n4)to display the names and IDs in the class\n");
+  while(q==1){
+    scanf("%d",&n);
+    switch(n){
+      case 1: 
+        add(class,index++);
+        break;
+
+      case 2: 
+        printf("Enter an ID to search ");
+        scanf("%d",&n);
+        if(search_by_id(class, n, index)>=0){
+          printf("The student is at: %d\n",search_by_id(class, n, index));
+          printf("The full name is %s\n",class[i]->name); 
+        }  
+        else
+          printf("The student is not found\n");
+      break;
+      case 3:
+        
+        break;
+      case 4:
+        
+      default :
+        printf("to continue press 1\n");
+        scanf("%d",&q);
+        break;
+    }
+
+  }
   return 0;
 }
 
