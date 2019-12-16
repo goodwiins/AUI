@@ -42,11 +42,12 @@ int main(void){
         printf("Enter an ID to search ");
         scanf("%d",&n);
         if(search_by_id(class, n, index)>=0){
-          printf("The full name is %s\n",class[search_by_id(class, n, index)]->name);
-          printf("The student is at: %d\n",search_by_id(class, n, index));
+          printf("\nThe full name is\n%s",class[search_by_id(class, n, index)]->name);
+          printf("\nThe student is at: %d\n",search_by_id(class, n, index));
+          printf("\n");
         }  
         else
-          printf("The student is not found\n");
+          printf("\nThe student is not found\n");
       break;
       case 3:
         //search_by_name(class,index);
