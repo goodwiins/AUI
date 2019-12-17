@@ -14,24 +14,24 @@ typedef struct{
 void add_student(student_t* class[], student_t* , int index);
 int search_by_id(student_t* class[],int, int index);
 void add(student_t* class[], int index);
-int search_by_last_name(student_t* class[],char* keyword, int index);
-void display_by_index(student_t* class[], int index);
-int contains_keyword(char *title, const char *keyword);
 void display_all(student_t* class[], int index);
+int search_by_name(student_t* class[],char* keyword, int index);
+int search_in(char* names,char* keyword);
 
 
 int main(void){
   //Declaring the class
   student_t* class[SIZE];
   int index=0,n; //each elment has an index in the class
-  student_t s1={.id= 79945,.name= "iliass jabali"};
-  add_student(class, &s1, index++);
-  student_t s2={.id= 95163,.name= "full name"};
-  add_student(class, &s2, index++);
-  student_t s3={.id= 80116,.name= "bouta"};
-  add_student(class, &s3, index++);
+  char* keyword;
+    student_t s1={.id= 79945,.name= "iliass jabali"};
+    add_student(class, &s1, index++);
+    student_t s2={.id= 95163,.name= "full name"};
+    add_student(class, &s2, index++);
+    student_t s3={.id= 80116,.name= "bouta"};
+    add_student(class, &s3, index++);
 
-  printf("The options are: \n1)To add a student to the the class \n2)To search for a student by ID \n3)To search for a student by name \n4)to display the names and IDs in the class\n5)To quite\n");
+  printf("The options are: \n1)To add a student to the the class \n2)To search for a student by ID \n3)To search for a student by name \n4)To display the names and IDs in the class\n\n");
   scanf("%d",&n);
 
     switch(n){
@@ -45,18 +45,19 @@ int main(void){
           printf("\nThe full name is\n%s",class[search_by_id(class, n, index)]->name);
           printf("\nThe student is at: %d\n",search_by_id(class, n, index));
           printf("\n");
-        } 
-        
+        }
+       
         else
           printf("\nThe student is not found\n");
       break;
       case 3:
-        search_by_name(class,index);
+          printf("Enter a keyword\n");
+          gets(keyword);
+          printf("There's %d",search_by_name(class,keyword,index));
+          printf("There's %d",search_by_name(class,"iliass",index));
         break;
       case 4:
         display_all(class,index);
-      case 5 :
-        ;
     }
 
   return 0;
@@ -71,12 +72,12 @@ void add(student_t* class[], int index){
   gets(temp);
   printf("Enter a ID\n");
   scanf("%d",&n);//STRING INPUT
-  
+ 
   if(isdigit(n))
     s.id=n;
   else
     printf("The ID input is not a int\n");
-  
+ 
   add_student(class, &s, index);
 }
 
@@ -96,28 +97,20 @@ int search_by_id(student_t* class[], int id, int index){
             return i;
     return -1;//-1 means it's not in the library
 }
-void search_by_name(student_t* class[],char* keyword, int index){
-  int i;
-  for(i=0;i<index;i++){
-    if(st)
-  }
-    
-}
-int search_by_last_name(student_t* class[],char* keyword, int index){
-  int i;
-  for(i=0;i<index;i++){
-    if(contains_keyword(class[i]->name),keyword)
-      printf("yes");
+int search_in(char* names,char* keyword){
+  char *ptr = strstr( names,keyword);
+  //printf("%s", strstr(keyword, names));
+  if (ptr != NULL){
+    return 1;// means that its true
   }
 }
-int contains_keyword(char *title, const char *keyword) {
-    printf("Comparing %s against %s\n", title, keyword);
-    if (strlen(title) < strlen(keyword))
-        return 0;
-    if (strlen(title) == strlen(keyword))
-        return !strcmp(title, keyword);
-    if (!strncmp(title, keyword, strlen(keyword)))
-        return 1;
-    
-    return contains_keyword(++title, keyword);
+int search_by_name(student_t* class[],char* keyword, int index){
+  int i,n=0;
+  for(i=0;i<index;i++){
+    if((search_in(class[i]->name,keyword))!=1){
+      printf("The names are %s and id is %d\n",class[i]->name,class[i]->id);
+      n++;
+    }
+  }
+  return n;
 }
