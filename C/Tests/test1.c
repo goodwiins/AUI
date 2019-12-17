@@ -45,16 +45,16 @@ int main(void){
           printf("\nThe full name is\n%s",class[search_by_id(class, n, index)]->name);
           printf("\nThe student is at: %d\n",search_by_id(class, n, index));
           printf("\n");
-        }
-       
+        } 
+        
         else
           printf("\nThe student is not found\n");
       break;
       case 3:
           printf("Enter a keyword\n");
-          gets(keyword);
+          getchar();
+          scanf("%s",keyword);
           printf("There's %d",search_by_name(class,keyword,index));
-          printf("There's %d",search_by_name(class,"iliass",index));
         break;
       case 4:
         display_all(class,index);
@@ -72,12 +72,12 @@ void add(student_t* class[], int index){
   gets(temp);
   printf("Enter a ID\n");
   scanf("%d",&n);//STRING INPUT
- 
+  
   if(isdigit(n))
     s.id=n;
   else
     printf("The ID input is not a int\n");
- 
+  
   add_student(class, &s, index);
 }
 
@@ -98,17 +98,17 @@ int search_by_id(student_t* class[], int id, int index){
     return -1;//-1 means it's not in the library
 }
 int search_in(char* names,char* keyword){
-  char *ptr = strstr( names,keyword);
+	char *ptr = strstr( names,keyword);
   //printf("%s", strstr(keyword, names));
-  if (ptr != NULL){
-    return 1;// means that its true
-  }
+	if (ptr != NULL){
+		return 1;// means that its true
+	}
 }
 int search_by_name(student_t* class[],char* keyword, int index){
   int i,n=0;
   for(i=0;i<index;i++){
     if((search_in(class[i]->name,keyword))!=1){
-      printf("The names are %s and id is %d\n",class[i]->name,class[i]->id);
+      printf("The names are %s and id is %d\n",class[i]->name,class[i]->id); 
       n++;
     }
   }
