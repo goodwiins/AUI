@@ -89,7 +89,7 @@ void add_student(student_t* class[], student_t *studentp, int index){
 void display_all(student_t* class[], int index){
   int i;
   for(i=0; i<index ; i++){
-    printf("the name is %s\nID is %d\n at position at %d\n",class[i]->name,class[i]->id,i);
+    printf("The name is %s\nID is %d\nAt position at %d\n",class[i]->name,class[i]->id,i);
   }
 }
 int search_by_id(student_t* class[], int id, int index){
@@ -112,7 +112,7 @@ int search_by_name(student_t* class[],char* keyword, int index){
   int i,n=0;
   for(i=0;i<index;i++){
     if((search_in(class[i]->name,keyword))==1){
-      printf("The names are %s and id is %d\n",class[i]->name,class[i]->id);
+      printf("The names is %s and Id is %d\n",class[i]->name,class[i]->id);
       n++;
     }
   }
