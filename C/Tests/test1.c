@@ -28,7 +28,7 @@ int main(void){
     add_student(class, &s1, index++);
     student_t s2={.id= 95163,.name= "full name"};
     add_student(class, &s2, index++);
-    student_t s3={.id= 80116,.name= "bouta"};
+    student_t s3={.id= 80116,.name= "test"};
     add_student(class, &s3, index++);
 
   printf("The options are: \n1)To add a student to the the class \n2)To search for a student by ID \n3)To search for a student by name \n4)To display the names and IDs in the class\n\n");
