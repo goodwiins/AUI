@@ -25,8 +25,8 @@ int main(void){
   int index=0,n; //each element has an index in the class
   char keyword[10];
     student_t s1={.id= 79945,.name= "iliass jabali"};
-    student_t s2={.id= 95163,.name= "full name"};
-    student_t s3={.id= 80116,.name= "test test"};
+    student_t s2={.id= 95163,.name= "malek El mouedden"};
+    student_t s3={.id= 81398,.name= "houssam saber"};
     add_student(class, &s1, index++);
     add_student(class, &s2, index++);
     add_student(class, &s3, index++);
@@ -86,7 +86,7 @@ void add_student(student_t* class[], student_t *studentp, int index){
 void display_all(student_t* class[], int index){
   int i;
   for(i=0; i<index ; i++){
-    printf("the name is %s and ID is %d at position at %d\n",class[i]->name,class[i]->id,i);
+    printf("the name is %s\nID is %d\n at position at %d\n",class[i]->name,class[i]->id,i);
   }
 }
 int search_by_id(student_t* class[], int id, int index){
@@ -102,6 +102,8 @@ int search_in(char* names,char* keyword){
   if (ptr != NULL){
     return 1;// means that its true
   }
+  else 
+    return 0;
 }
 int search_by_name(student_t* class[],char* keyword, int index){
   int i,n=0;
