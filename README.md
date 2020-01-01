@@ -1,4 +1,4 @@
-# AUI**
+# AUI
 CSC 1401 Computer programing 
 - Selection Statements
 - Repetition Loops
