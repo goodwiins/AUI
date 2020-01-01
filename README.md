@@ -1,6 +1,6 @@
 # AUI
 CSC 1401 Computer programing 
-    #Selection Statements
+    \ Selection Statements
     Repetition Loops
     Modular Programming Using Functions
     Arrays
