@@ -7,7 +7,7 @@ void f1(int *p){
 void f2(int *p){
 	*p *= 2;
 }
-
+ 
 void f3(int *p){
 	*p *= 3;
 }
