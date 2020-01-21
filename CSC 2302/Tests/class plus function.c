@@ -9,7 +9,6 @@ typedef struct{
   int id;
   char* name;
 }student_t;
-
 //Defining the functions
 void add_student(student_t* class[], student_t* , int index);
 int search_by_id(student_t* class[],int, int index);
@@ -17,7 +16,6 @@ void add(student_t* class[], int index);
 void display_all(student_t* class[], int index);
 int search_by_name(student_t* class[],char* keyword, int index);
 int search_in(char* names,char* keyword);
-
 
 int main(void){
   //Declaring the class
@@ -105,7 +103,7 @@ int search_in(char* names,char* keyword){
   if (ptr != NULL){
     return 1;// means that its true
   }
-  else 
+  else
     return 0;
 }
 int search_by_name(student_t* class[],char* keyword, int index){
@@ -118,3 +116,9 @@ int search_by_name(student_t* class[],char* keyword, int index){
   }
   return n;
 }
+/*
+- add search
+- islower/isdigit it couldnt find the thing t and is
+*/
+
+
