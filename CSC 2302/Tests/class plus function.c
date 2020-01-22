@@ -8,7 +8,7 @@ typedef struct{
   int id;
   char* name;
 }student_t;
-// project to add class into an array of schools plus adding some kind of a search by name
+
 /*typedef struct {
     char* name;
     char code[9];
@@ -26,8 +26,7 @@ int search_in(char* names,char* keyword);
 
 int main(void){
   //Declaring the class
-  //class_t school[3];
-  student_t class[30]; // no need if we used the the schools options 
+  student_t* class[50];
   int index=0,n; //each element has an index in the class
   char keyword[10];
   //adding the students
