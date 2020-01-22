@@ -2,13 +2,20 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
-#define SIZE 100
 
 //Defining the struct
 typedef struct{
   int id;
   char* name;
 }student_t;
+
+typedef struct {
+    char* name;
+    char code[9];
+    int numb;
+    student_t students[30];
+}class_t;
+
 //Defining the functions
 void add_student(student_t* class[], student_t* , int index);
 int search_by_id(student_t* class[],int, int index);
@@ -19,7 +26,7 @@ int search_in(char* names,char* keyword);
 
 int main(void){
   //Declaring the class
-  student_t* class[SIZE];
+  class_t school[3];
   int index=0,n; //each element has an index in the class
   char keyword[10];
   //adding the students
@@ -131,7 +138,7 @@ int search_by_name(student_t* class[],char* keyword, int index){
   return n;
 }
 /*
-- add search
+- add search for class
 - islower it couldnt find the thing t and is
 - also i think there's some memory leaks in using malloc
 */
