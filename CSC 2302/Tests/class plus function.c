@@ -27,7 +27,7 @@ int search_in(char* names,char* keyword);
 int main(void){
   //Declaring the class
   //class_t school[3];
-  student_t class[30]
+  student_t class[30]; // no need if we used the the schools options 
   int index=0,n; //each element has an index in the class
   char keyword[10];
   //adding the students
