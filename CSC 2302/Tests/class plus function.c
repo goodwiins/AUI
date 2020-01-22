@@ -63,7 +63,7 @@ int main(void){
 
 void add(student_t* class[], int index){
   student_t s;
-  //int n;
+  //p^int n;
   char *temp = (char*)malloc(50);
   printf("Enter a name\n");
   getchar();//to take out the space the space
