@@ -23,14 +23,12 @@ int main(void){
   int index=0,n; //each element has an index in the class
   char keyword[10];
   //adding the students
-    student_t s1={.id= 79945,.name= "iliass jabali"};
-    student_t s2={.id= 80035,.name= "hanane nour moussa"};
-    student_t s3={.id= 80116,.name= "mohamed bouya malainin"};
-    student_t s4={.id= 80066,.name= "ali lmalki "};
+    student_t s0={.id= 79945,.name= "iliass jabali"};
+    student_t s1={.id= 81231,.name= "zakaria taleb"};
+    student_t s2={.id= 82057,.name= "mohamed adnane al khiati"};
+    add_student(class, &s0, index++);
     add_student(class, &s1, index++);
     add_student(class, &s2, index++);
-    add_student(class, &s3, index++);
-    add_student(class, &s4, index++);
   printf("The options are: \n1)To add a student to the the class \n2)To search for a student by ID \n3)To search for a student by name \n4)To display the names and IDs in the class\n\n");
   scanf("%d",&n);
 
@@ -65,19 +63,21 @@ int main(void){
 
 void add(student_t* class[], int index){
   student_t s;
-  int n;
+  //int n;
   char *temp = (char*)malloc(50);
   printf("Enter a name\n");
-  getchar();
+  getchar();//to take out the space the space
   gets(temp);
   printf("Enter a ID\n");
-  scanf("%d",&n);//STRING INPUT
+  scanf("%d",s.id);//STRING INPUT
 
-  if(isdigit(n))
+  /*if(isdigit(n))
     s.id=n;
   else
     printf("The ID input is not a int\n");
-
+  */
+  //didin't add it because it didi'nt work for long, must find a solution either using strings or somthing else
+  
   add_student(class, &s, index);
 }
 
@@ -119,6 +119,5 @@ int search_by_name(student_t* class[],char* keyword, int index){
 /*
 - add search
 - islower/isdigit it couldnt find the thing t and is
+- also i think there's some memory leaks in using malloc
 */
-
-
