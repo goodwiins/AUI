@@ -29,10 +29,11 @@ int main(void){
     add_student(class, &s0, index++);
     add_student(class, &s1, index++);
     add_student(class, &s2, index++);
+  //Options menu
   printf("The options are: \n1)To add a student to the the class \n2)To search for a student by ID \n3)To search for a student by name \n4)To display the names and IDs in the class\n\n");
   scanf("%d",&n);
 
-    switch(n){
+  switch(n){
       case 1:
         add(class,index++);
         break;
@@ -63,22 +64,35 @@ int main(void){
 
 void add(student_t* class[], int index){
   student_t s;
-  //p^int n;
-  char *temp = (char*)malloc(50);
-  printf("Enter a name\n");
-  getchar();//to take out the space the space
-  gets(temp);
-  printf("Enter a ID\n");
-  scanf("%d",s.id);//STRING INPUT
+   int num1,num2,num3;
+   char temp[6];
+   char *name = (char*)malloc(50*sizeof(char));
+   char *id = (char*)malloc(5*sizeof(char));
+   char *half1=(char*)malloc(2*sizeof(char));
+   char *half2=(char*)malloc(2*sizeof(char));
+   char *half3=(char*)malloc(2*sizeof(char));
+   
+   printf("Enter a name\n");
+     getchar();//to take out the space the space
+     gets(name);
+     printf("Enter a ID\n");
+      getchar();
+     //scanf("%s",id);//STRING INPUT
+      gets(id);
+   // deviding the string
+  memcpy(half1, id, 2 * sizeof(char));
+  memcpy(half2, id + 2, 2 * sizeof(char));
+ memcpy(half3, id + 4, 2 * sizeof(char));
 
-  /*if(isdigit(n))
-    s.id=n;
-  else
-    printf("The ID input is not a int\n");
-  */
-  //didin't add it because it didi'nt work for long, must find a solution either using strings or somthing else
-  
-  add_student(class, &s, index);
+   num1=atoi(half1);// it only accepts ints
+   num2=atoi(half2);
+   num3=atoi(half3);
+    if (isdigit(num1)==0 && isdigit(num2)==0 && isdigit(num3)==0) {
+        s.id=temp;
+    }
+    else
+       printf("The ID input is not a int\n");
+      add_student(class, &s, index);
 }
 
 void add_student(student_t* class[], student_t *studentp, int index){
@@ -118,6 +132,6 @@ int search_by_name(student_t* class[],char* keyword, int index){
 }
 /*
 - add search
-- islower/isdigit it couldnt find the thing t and is
+- islower it couldnt find the thing t and is
 - also i think there's some memory leaks in using malloc
 */
