@@ -17,12 +17,12 @@ typedef struct{
 }class_t;*/
 
 //Defining the functions
-  void add_student(student_t* class[], student_t* , int index);
   int search_by_id(student_t* class[],int, int index);
-  void add(student_t* class[], int index);
-  void display_all(student_t* class[], int index);
-  int search_by_name(student_t* class[],char* keyword, int index);
-  int search_in(char* names,char* keyword);
+int search_by_name(student_t* class[],char* keyword, int index);
+int search_in(char* names,char* keyword);
+void add(student_t* class[], int index);
+void add_student(student_t* class[], student_t* , int index);
+void display_all(student_t* class[], int index);
 
 int main(void){
   //Declaring the class
