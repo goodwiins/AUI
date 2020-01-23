@@ -147,7 +147,19 @@ int search_by_name(student_t* class[],char* keyword, int index){
   return n;
 }
 void sort_by_id(student_t* class[], int index){
-  int n, i, j, temp, min;
-  min= class[0]->id;
-  printf
+  int n, j, temp, min;
+   min= class[0]->id;
+   //finding the min
+   for (j = 1; j < index; j++) {
+      if ( class[j]->id < min)
+         min = class[j]->id ;
+   }
+   //couldn't make it work so  Ill leave it as a comment
+   for (j=0; j<index-1; j++) {
+      if (class[j]->id <class[j+1]->id) {
+         temp= class[j+1];
+         class[j+1]=class[j];
+         class[j]=temp;
+      }
+   }
 }
