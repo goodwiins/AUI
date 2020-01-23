@@ -17,13 +17,13 @@ typedef struct{
 }class_t;*/
 
 //Defining the functions
-int search_by_id(student_t* class[],int, int index);
-int search_by_name(student_t* class[],char* keyword, int index);
-int search_in(char* names,char* keyword);
-void add(student_t* class[], int index);
-void add_student(student_t* class[], student_t* , int index);
-void display_all(student_t* class[], int index);
-void sort_by_id(student_t* class[], int index);
+  int search_by_id(student_t* class[],int, int index);
+  int search_by_name(student_t* class[],char* keyword, int index);
+  int search_in(char* names,char* keyword);
+  void add(student_t* class[], int index);
+  void add_student(student_t* class[], student_t* , int index);
+  void display_all(student_t* class[], int index);
+  void sort_by_id(student_t* class[], int index);
 
 int main(void){
   //Declaring the class
@@ -31,8 +31,8 @@ int main(void){
   int index=0,n,h; //each element has an index in the class
   char keyword[10];
   //adding the students
-    student_t s0={.id= 79945,.name= "iliass jabali"};
-    student_t s1={.id= 81231,.name= "zakaria taleb"};
+    student_t s0={.id= 81231,.name= "zakaria taleb"};
+    student_t s1={.id= 79945,.name= "iliass jabali"};
     student_t s2={.id= 82057,.name= "mohamed adnane al khiati"};
     add_student(class, &s0, index++);
     add_student(class, &s1, index++);
@@ -45,8 +45,8 @@ int main(void){
   }
   printf("\n");
   scanf("%d",&n);
-while (1)
-{ switch(n){
+while (1){ 
+  switch(n){
       case 1:
         add(class,index++);
       break;
@@ -76,7 +76,6 @@ while (1)
       break;
     }
 }
-
   return 0;
 }
 
@@ -106,13 +105,12 @@ void add(student_t* class[], int index){
    num2=atoi(half2);
    num3=atoi(half3);
     if (isdigit(num1)==0 && isdigit(num2)==0 && isdigit(num3)==0) {
-        s.id=temp;// convert to a int
+        s.id=atoi(temp);// convert to a int
     }
     else
        printf("The ID input is not a int\n");
   add_student(class, &s, index);
 }
-
 void add_student(student_t* class[], student_t *studentp, int index){
    class[index] = studentp;
 }
@@ -147,4 +145,9 @@ int search_by_name(student_t* class[],char* keyword, int index){
     }
   }
   return n;
+}
+void sort_by_id(student_t* class[], int index){
+  int n, i, j, temp, min;
+  min= class[0]->id;
+  printf
 }
