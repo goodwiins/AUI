@@ -45,8 +45,8 @@ int main(void){
   }
   printf("\n");
   scanf("%d",&n);
-while (1){ 
-  switch(n){
+  while (1){ 
+    switch(n){
       case 1:
         add(class,index++);
       break;
@@ -75,7 +75,7 @@ while (1){
         sort_by_id(class,index);
       break;
     }
-}
+  }
   return 0;
 }
 
@@ -89,13 +89,13 @@ void add(student_t* class[], int index){
    char *half2=(char*)malloc(2*sizeof(char));
    char *half3=(char*)malloc(2*sizeof(char));
    
-   printf("Enter a name\n");
-     getchar();//to take out the space the space
-     gets(name);
-     printf("Enter a ID\n");
-      getchar();
-     //scanf("%s",id);//STRING INPUT
-      gets(id);
+  printf("Enter a name\n");
+  getchar();//to take out the space the space
+  gets(name);
+  printf("Enter a ID\n");
+  getchar();
+  //scanf("%s",id);//STRING INPUT
+  gets(id);
    // deviding the string
   memcpy(half1, id, 2 * sizeof(char));
   memcpy(half2, id + 2, 2 * sizeof(char));
