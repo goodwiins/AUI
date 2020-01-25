@@ -1,11 +1,11 @@
 #include <stdio.h>
 #define MAX_TEAMS 30
-
 typedef struct{
     // 24 hrs no AM pm
     int hour;
     int minute;
 }hour_t;
+
 typedef struct{
     char stadium[30];
     char city[10];
@@ -18,45 +18,33 @@ typedef struct{
 }time_t;
 // ranking
 typedef struct  {
-	struct team *t[MAX_TEAMS];
-	int points[MAX_TEAMS];
-	int goals[MAX_TEAMS];
+	team_t teams[MAX_TEAMS];
+	int points;
+	int goals;
 	int size;
 }ranking_t;
 
-
-
-
-
-typedef struct  {
-	char *location;
-	team_t *team1, *team2;
-	int score1, score2;
-	char status; // status n(not yet),c(canceled), d(delayed), f(finished), and  p(in progress)
-    time_t time;
-    // location
-    // score (home, away)
-    // team1, team2
-    
-
-
-}match_t;
-
 typedef struct{
 	int size;
-    char name[35];
+    char name[30];
 	player_t player[20]; 
     ranking_t; 
 }team_t;
 
-typedef struct{
-    // player
-    // age
-    // history
-    // name
-    // number
-}player_t;
+typedef struct  {
+	location_t *location;
+	team_t *team1, *team2;
+	int score1, score2;
+	char status; // status n(not yet),c(canceled), d(delayed), f(finished), and  p(in progress)
+    time_t time;
+}match_t;
 
+typedef struct{
+    char name[35];
+    int age;
+    int number;
+    int goals;
+}player_t;
 
 void sort(struct ranking *theRanking) {
 }
