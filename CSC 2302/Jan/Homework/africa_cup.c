@@ -1,52 +1,36 @@
 #include <stdio.h>
-#define MAX_TEAMS 30
-typedef struct{
-    // 24 hrs no AM pm
-    int hour;
-    int minute;
-}hour_t;
+#include "africa_cup.h"
 
-typedef struct{
-    char stadium[30];
-    char city[10];
-}location_t;
-typedef struct{
-	int day;
-    int month;
-    int year;
-    hour_t hour;
-}time_t;
-// ranking
-typedef struct  {
-	team_t teams[4];
-	int points;
-	int goals;
-	int size;
-}ranking_t;
 
-typedef struct{
-	int size;
-    char name[30];
-	player_t player[20]; 
-    ranking_t; 
-}team_t;
-
-typedef struct  {
-	location_t *location;
-	team_t *team1, *team2;
-	int score1, score2;
-	char status; // status n(not yet),c(canceled), d(delayed), f(finished), and  p(in progress)
-    time_t time;
-    ranking_t;
-}match_t;
-
-typedef struct{
-    char name[35];
-    int age;
-    int number;
-    int goals;
-}player_t;
-
+void main() {
+    int n,g;
+	//delcare the teams and names 
+    ranking_t groups[5]=(group_a,group)
+    add_teams(&groups);
+    rank_update(&groups);
+    printf("Choose the commande: \n ");
+    scanf("%d",&n);
+    for (h = 0; h < 20; h++){
+        printf("-");
+        }
+    switch (n){
+    case 1: 
+        view_all(&groups);
+        printf("If you ant to updated the status of a team  choose the group\n")
+        scanf("%d",&n);
+        view_groups(&groups);
+        scanf("%d",&n);
+        printf("If you ant to updated the status of a team  choose the team \n")
+        
+        team_update(&group[n]);
+        view_update(&group[n]);
+        break;
+    
+    default:
+        break;
+    }
+    
+}
 void sort(struct ranking *theRanking) {
 }
 
@@ -89,48 +73,3 @@ void set_ranking(struct ranking *theRanking, struct match *theMatch) {
 	theRanking->score[0] = 0;
 	theRanking->goals[0] = 0;
 	theRanking->size = 1;*/
-    team_t
-
-//Defining the functions
-  int search_by_id(student_t* class[],int, int index);
-  int search_by_name(student_t* class[],char* keyword, int index);
-  int search_in(char* names,char* keyword);
-  void add(student_t* class[], int index);
-  void add_student(student_t* class[], student_t* , int index);
-  void display_all(student_t* class[], int index);
-  void sort_by_id(student_t* class[], int index);
-
-rank_updat(&groups);
-
-
-void main() {
-    int n,g;
-	//delcare the teams and names 
-    ranking_t groups[5]=(group_a,group)
-    add_teams(&groups);
-    rank_update(&groups);
-    printf("Choose the commande: \n ")
-    scanf("%d",&n);
-    for (h = 0; h < 20; h++){
-        printf("-");
-        }
-    switch (n){
-    case 1: 
-        view_all(&groups);
-        printf("If you ant to updated the status of a team  choose the group\n")
-        scanf("%d",&n);
-        view_groups(&groups);
-        scanf("%d",&n);
-        printf("If you ant to updated the status of a team  choose the team \n")
-        
-        team_update(&group[n]);
-        view_update(&group[n]);
-
-        }
-        break;
-    
-    default:
-        break;
-    }
-    
-}
