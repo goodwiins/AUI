@@ -18,7 +18,7 @@ typedef struct{
 }time_t;
 // ranking
 typedef struct  {
-	team_t teams[MAX_TEAMS];
+	team_t teams[4];
 	int points;
 	int goals;
 	int size;
@@ -91,8 +91,46 @@ void set_ranking(struct ranking *theRanking, struct match *theMatch) {
 	theRanking->size = 1;*/
     team_t
 
+//Defining the functions
+  int search_by_id(student_t* class[],int, int index);
+  int search_by_name(student_t* class[],char* keyword, int index);
+  int search_in(char* names,char* keyword);
+  void add(student_t* class[], int index);
+  void add_student(student_t* class[], student_t* , int index);
+  void display_all(student_t* class[], int index);
+  void sort_by_id(student_t* class[], int index);
+
+rank_updat(&groups);
+
+
 void main() {
+    int n,g;
 	//delcare the teams and names 
-    add_teams()
+    ranking_t groups[5]=(group_a,group)
+    add_teams(&groups);
+    rank_update(&groups);
+    printf("Choose the commande: \n ")
+    scanf("%d",&n);
+    for (h = 0; h < 20; h++){
+        printf("-");
+        }
+    switch (n){
+    case 1: 
+        view_all(&groups);
+        printf("If you ant to updated the status of a team  choose the group\n")
+        scanf("%d",&n);
+        view_groups(&groups);
+        scanf("%d",&n);
+        printf("If you ant to updated the status of a team  choose the team \n")
+        
+        team_update(&group[n]);
+        view_update(&group[n]);
+
+        }
+        break;
+    
+    default:
+        break;
+    }
     
 }
