@@ -83,11 +83,12 @@ void set_ranking(struct ranking *theRanking, struct match *theMatch) {
 }
 
 void main() {
-	struct team t1 = { };
+	/*struct team t1 = { };
 	struct ranking theRanking;
 	theRanking->size = 0;
 	theRanking->t[0] = &t1;
 	theRanking->score[0] = 0;
 	theRanking->goals[0] = 0;
-	theRanking->size = 1;
+	theRanking->size = 1;*/
+    team_t
 }
