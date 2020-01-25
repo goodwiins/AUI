@@ -1,21 +1,19 @@
 #include <stdio.h>
-//#include "agricacup.h"
-
 #define MAX_TEAMS 30
 
 // ranking
 
-struct ranking {
+typedef struct {
 	struct team *t[MAX_TEAMS];
 	int points[MAX_TEAMS];
 	int goals[MAX_TEAMS];
 	int size;
-};
+}ranking_t;
 
-struct time {
+typedef struct{
 	int t;
 	// Needs date and hour.
-};
+}time_t;
 
 // matches
 
@@ -25,29 +23,30 @@ struct time {
 // team1, team2
 // status (not yet, delayed, canceled, finished, in progress)
 
-struct match {
+typedef struct  {
 	char *location;
-	struct team *team1, *team2;
+	team_t *team1, *team2;
 	int score1, score2;
 	char status;
-	struct time t;
-};
+	struct time_t;
+}match_t;
 
 // teams
 // roster/lineup
-struct team {
+typedef struct{
 	int size;
 	player_t player[20]; 
 	char name[35];
-};
+}team_t;
 
-typdef int player_t;
+typdef struct{
+    // player
+    // age
+    // history
+    // name
+    // number
+}player_t;
 
-// player
-// age
-// history
-// name
-// number
 
 void sort(struct ranking *theRanking) {
 }
