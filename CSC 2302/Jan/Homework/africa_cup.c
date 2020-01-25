@@ -37,6 +37,7 @@ typedef struct  {
 	int score1, score2;
 	char status; // status n(not yet),c(canceled), d(delayed), f(finished), and  p(in progress)
     time_t time;
+    ranking_t;
 }match_t;
 
 typedef struct{
@@ -81,9 +82,7 @@ void set_ranking(struct ranking *theRanking, struct match *theMatch) {
 
 	sort(theRanking);
 }
-
-void main() {
-	/*struct team t1 = { };
+/*struct team t1 = { };
 	struct ranking theRanking;
 	theRanking->size = 0;
 	theRanking->t[0] = &t1;
@@ -91,4 +90,9 @@ void main() {
 	theRanking->goals[0] = 0;
 	theRanking->size = 1;*/
     team_t
+
+void main() {
+	//delcare the teams and names 
+    add_teams()
+    
 }
