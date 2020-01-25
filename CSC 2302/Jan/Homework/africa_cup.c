@@ -1,21 +1,28 @@
 #include <stdio.h>
 #include "africa_cup.h"
 
-
 void main() {
     int n,g;
 	//delcare the teams and names 
-    ranking_t groups[5]=(group_a,group)
+    ranking_t groups[]=(group_a,group_b,group_c,group_d, group_e,group_f);
     add_teams(&groups);
     rank_update(&groups);
-    printf("Choose the commande: \n ");
+    printf("Choose the commande: \n1) update a team\ n ");
     scanf("%d",&n);
     for (h = 0; h < 20; h++){
         printf("-");
         }
     switch (n){
     case 1: 
-        view_all(&groups);
+        update_team()
+        break;
+    default:
+        break;
+    }
+    
+}
+void update_team(rank){
+    view_all(&groups);
         printf("If you ant to updated the status of a team  choose the group\n")
         scanf("%d",&n);
         view_groups(&groups);
@@ -24,13 +31,10 @@ void main() {
         
         team_update(&group[n]);
         view_update(&group[n]);
-        break;
-    
-    default:
-        break;
-    }
-    
 }
+
+
+
 void sort(struct ranking *theRanking) {
 }
 
