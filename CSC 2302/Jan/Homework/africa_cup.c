@@ -3,7 +3,7 @@
 
 // ranking
 
-typedef struct {
+typedef struct  {
 	struct team *t[MAX_TEAMS];
 	int points[MAX_TEAMS];
 	int goals[MAX_TEAMS];
@@ -15,9 +15,17 @@ typedef struct{
 	// Needs date and hour.
 }time_t;
 
+typedef struct{
+	time_t ;//date and hour string? 3 numbers?
+    location
+        // score (home, away)
+        // team1, team2
+        // status (not yet, delayed, canceled, finished, in progress)
+}matches_t;
+
 // matches
 
-// date and hour string? 3 numbers?
+// 
 // location
 // score (home, away)
 // team1, team2
@@ -39,7 +47,7 @@ typedef struct{
 	char name[35];
 }team_t;
 
-typdef struct{
+typedef struct{
     // player
     // age
     // history
