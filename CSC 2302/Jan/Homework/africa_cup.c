@@ -2,7 +2,6 @@
 #define MAX_TEAMS 30
 
 // ranking
-
 typedef struct  {
 	struct team *t[MAX_TEAMS];
 	int points[MAX_TEAMS];
@@ -11,25 +10,14 @@ typedef struct  {
 }ranking_t;
 
 typedef struct{
-	int t;
+	char date[8];
+    char time[]
 	// Needs date and hour.
 }time_t;
+typedef struct hour{
+    /* data */
+};
 
-typedef struct{
-	time_t ;//date and hour string? 3 numbers?
-    location
-        // score (home, away)
-        // team1, team2
-        // status (not yet, delayed, canceled, finished, in progress)
-}matches_t;
-
-// matches
-
-// 
-// location
-// score (home, away)
-// team1, team2
-// status (not yet, delayed, canceled, finished, in progress)
 
 typedef struct  {
 	char *location;
@@ -37,14 +25,19 @@ typedef struct  {
 	int score1, score2;
 	char status;
 	struct time_t;
+    date and hour string? 3 numbers?
+    // location
+    // score (home, away)
+    // team1, team2
+    // status (not yet, delayed, canceled, finished, in progress)
+
 }match_t;
 
-// teams
-// roster/lineup
 typedef struct{
 	int size;
+    char name[35];
 	player_t player[20]; 
-	char name[35];
+    ranking_t; 
 }team_t;
 
 typedef struct{
@@ -100,5 +93,4 @@ void main() {
 	theRanking->score[0] = 0;
 	theRanking->goals[0] = 0;
 	theRanking->size = 1;
-	
 }
