@@ -1,6 +1,21 @@
 #include <stdio.h>
 #define MAX_TEAMS 30
 
+typedef struct{
+    // 24 hrs no AM pm
+    int hour;
+    int minute;
+}hour_t;
+typedef struct{
+    char stadium[30];
+    char city[10];
+}location_t;
+typedef struct{
+	int day;
+    int month;
+    int year;
+    hour_t hour;
+}time_t;
 // ranking
 typedef struct  {
 	struct team *t[MAX_TEAMS];
@@ -9,23 +24,9 @@ typedef struct  {
 	int size;
 }ranking_t;
 
-typedef struct{
-	int day;
-    int month;
-    int year;
-    hour_t hour;
-}time_t;
 
-typedef struct{
-    // 24 hrs no AM pm
-    int hour;
-    int minute;
-}hour_t;
 
-typedef struct{
-    char stadium[30];
-    char city[10];
-}location_t;
+
 
 typedef struct  {
 	char *location;
