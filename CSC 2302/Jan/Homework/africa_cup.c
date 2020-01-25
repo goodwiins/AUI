@@ -10,14 +10,17 @@ typedef struct  {
 }ranking_t;
 
 typedef struct{
-	char date[8];
-    char time[]
-	// Needs date and hour.
+	int day;
+    int month;
+    int year;
+    hour_t hour;
 }time_t;
-typedef struct hour{
-    /* data */
-};
 
+typedef struct{
+    // 24 hrs no AM pm
+    int hour;
+    int minute;
+}hour_t
 
 typedef struct  {
 	char *location;
@@ -25,7 +28,7 @@ typedef struct  {
 	int score1, score2;
 	char status;
 	struct time_t;
-    date and hour string? 3 numbers?
+    //date and hour string? 3 numbers?
     // location
     // score (home, away)
     // team1, team2
