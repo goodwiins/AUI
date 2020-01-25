@@ -20,19 +20,24 @@ typedef struct{
     // 24 hrs no AM pm
     int hour;
     int minute;
-}hour_t
+}hour_t;
+
+typedef struct{
+    char stadium[30];
+    char city[10];
+}location_t;
 
 typedef struct  {
 	char *location;
 	team_t *team1, *team2;
 	int score1, score2;
-	char status;
-	struct time_t;
-    //date and hour string? 3 numbers?
+	char status; // status n(not yet),c(canceled), d(delayed), f(finished), and  p(in progress)
+    time_t time;
     // location
     // score (home, away)
     // team1, team2
-    // status (not yet, delayed, canceled, finished, in progress)
+    
+
 
 }match_t;
 
