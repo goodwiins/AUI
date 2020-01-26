@@ -1,6 +1,5 @@
 #include <stdio.h>
 //#include "agricacup.h"
-#define MAX_TEAMS 4 //for the sake of simplicity 
 
 typedef struct {
    int hour;
@@ -18,6 +17,8 @@ typedef struct{
 typedef struct  {
    player_t player[20];
    char name[35];
+   int points;
+   int goalsin;
 }team_t;
 
 typedef struct{
@@ -28,21 +29,22 @@ typedef struct{
    char status; // status (not yet, delayed, canceled, finished, in progress)
 }match_t;
 
-typedef struct{
-    team_t teams[MAX_TEAMS];
-    int points[MAX_TEAMS];
-    int goals[MAX_TEAMS];
+/*typedef struct{
+    team_t teams[4];
+    int points[4];
+    int goals[4];
 }ranking_t;
 
-/*void set_ranking(ranking_t *theranking, match_t *theMatch) {
+
+void set_ranking(ranking_t *theranking, match_t *theMatch) {
    // look in the match, and find the teams. Check which team won.
    // Add points to both teams in the ranking.
    // Adjust the ranking.
    int t1num, t2num;
    team_t *t1 = theMatch->team1, *t2 = theMatch->team2;
-   for(t1num = 0;t1num < MAX_TEAMS && theranking->t1num!= t1; t1num++);
+   for(t1num = 0;t1num < 4 && theranking->t1num!= t1; t1num++);
    
-   for(t2num = 0;t2num < MAX_TEAMS && theranking->t[t2num]!= t2; t2num++);
+   for(t2num = 0;t2num < 4 && theranking->t[t2num]!= t2; t2num++);
    // t1num and t2num tell me the array location of the two teams in
    // the rankings.
    
@@ -59,29 +61,29 @@ typedef struct{
    theranking->goals[t2num] += theMatch->score2;
 
    sort(theranking);
-}
-void sort(ranking_t*theranking) {
 }*/
+void add_team(team_t* group[],team_t* t,int index){
+    group[index]=t;
+}
 
-void add_team(ranking_t *theranking){
-    t1=theranking->teams[0];
-    theranking->goals[0]=0;
-    theranking->points[0]=0;
-
+void sort(ranking_t*theranking) {
 }
 
 int main(void) {
-    int index=0;
-    ranking_t *theranking;
-    team_t t1 ={.name="Morocco"};
-    add_team(theranking,&t1,index ++);
-    team_t t2 ={.name="Ivory cost"};
-    add_team(theranking,&t2,index ++);
+    int ranking_a=0;
+    team_t *group_a[4];
+    //each group has its ranking and the ranking is set to be gatherd  
+    /*à        int ranking_b=0,ranking_c=0;
+        team_t *group_b[4];
+        team_t *group_c[4];*/
+    team_t t1,t2,t3,t4;
+    add_team(group_a,&t1,ranking_a++);
+    add_team(group_a,&t2,ranking_a++);
+    add_team(group_a,&t3,ranking_a++);
+    add_team(group_a,&t4,ranking_a++);
+    printf("%d",ranking_a);
+    set_ranking(*group_a,ranking_a);
     
-    /*theranking->size = 0;
-   theranking->t[0] = &t1;
-   theranking->score[0] = 0;
-   theranking->goals[0] = 0;
-   theranking->size = 1;*/
+   
    
 }
