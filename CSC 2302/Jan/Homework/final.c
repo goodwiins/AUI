@@ -10,7 +10,7 @@ typedef struct {
 }date_t;
 
 typedef struct{
-   char name[30];
+   char name[40];
    int age;
    int number;
 }player_t;
@@ -29,7 +29,7 @@ typedef struct{
 }match_t;
 
 typedef struct{
-   team_t teams[MAX_TEAMS];
+    team_t teams[MAX_TEAMS];
     int points[MAX_TEAMS];
     int goals[MAX_TEAMS];
 }ranking_t;
@@ -71,10 +71,13 @@ void add_team(ranking_t *theranking){
 }
 
 int main(void) {
+    int index=0;
     ranking_t *theranking;
-    team_t t1,t2;
-    int index=0
-    add_team(ranking )
+    team_t t1 ={.name="Morocco"};
+    add_team(theranking,&t1,index ++);
+    team_t t2 ={.name="Ivory cost"};
+    add_team(theranking,&t2,index ++);
+    
     /*theranking->size = 0;
    theranking->t[0] = &t1;
    theranking->score[0] = 0;
