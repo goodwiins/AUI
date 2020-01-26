@@ -66,8 +66,8 @@ void add_team(team_t* group[],team_t* t,int index){
     group[index]=t;
 }
 
-void sort(ranking_t*theranking) {
-}
+/*void sort(ranking_t*theranking) {
+}*/
 
 int main(void) {
     int ranking_a=0;
@@ -77,13 +77,12 @@ int main(void) {
         team_t *group_b[4];
         team_t *group_c[4];*/
     team_t t1,t2,t3,t4;
-    add_team(group_a,&t1,ranking_a++);
-    add_team(group_a,&t2,ranking_a++);
-    add_team(group_a,&t3,ranking_a++);
-    add_team(group_a,&t4,ranking_a++);
+        add_team(group_a,&t1,ranking_a++);
+        add_team(group_a,&t2,ranking_a++);
+        add_team(group_a,&t3,ranking_a++);
+        add_team(group_a,&t4,ranking_a++);
     printf("%d",ranking_a);
     set_ranking(*group_a,ranking_a);
     
-   
    
 }
