@@ -71,7 +71,9 @@ void set_match(ranking_t* theranking,team_t* t0,team_t* t1,match_t* m0){
 }*/
 // sorry the function is out of service for the following reason: Thread 1: EXC_BAD_ACCESS (code=1, address=0x7ffeefc48c14)
 //also i need to make an array of pointers of type team, put pointers there and then sort them by pointes 
-void add_teams()
+void add_teams(team_t *ranking){
+
+}
 
  void set_ranking(ranking_t* theranking,match_t* match) {
     team_t *t1, *t2;
@@ -98,17 +100,17 @@ show_ranking(ranking_t *theranking){
    for ( i = 0; i < MAX_TEAMS; i++){
       printf("Team %s, is at position %d, with %d points",theranking->teams->name, );
    }
-   
 
-
-}
 int main(void){
-   team_t t0,t1;//for matches 
-   ranking_t theranking;
-   match_t match;
+   // it didin't workout in sorting so basically im gonna move on to other stuff
    team_t ranking[MAX_TEAMS];
+   int index;
+      team_t t0,t1;//for matches 
+      ranking_t theranking;
+      match_t match;
+   
    add_nations(&theranking);
    set_match(&theranking,&t0,&t1,&match);
    set_ranking(&theranking, &match);
    show_ranking(&theranking);
-}
+   }
