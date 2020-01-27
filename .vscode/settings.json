@@ -2,6 +2,7 @@
     "python.pythonPath": "/usr/local/bin/python3",
     "files.associations": {
         "test3.C": "cpp",
-        "typeinfo": "c"
+        "typeinfo": "c",
+        "code5.C": "cpp"
     }
 }
