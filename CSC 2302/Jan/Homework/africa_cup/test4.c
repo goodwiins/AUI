@@ -56,7 +56,7 @@ void set_match(ranking_t* theranking,team_t* t0,team_t* t1,match_t* m0){
    
 }
 
-/*void sort(ranking_t* theranking ){
+void sort(ranking_t* theranking ){
    int c,d;
    ranking_t swap;
    for (c = 0 ; c < MAX_TEAMS - 1; c++){
@@ -68,7 +68,7 @@ void set_match(ranking_t* theranking,team_t* t0,team_t* t1,match_t* m0){
        }
      }
    }
-}*/
+}
 // sorry the function is out of service for the following reason: Thread 1: EXC_BAD_ACCESS (code=1, address=0x7ffeefc48c14)
 //also i need to make an array of pointers of type team, put pointers there and then sort them by pointes 
 void add_teams(team_t *ranking){
