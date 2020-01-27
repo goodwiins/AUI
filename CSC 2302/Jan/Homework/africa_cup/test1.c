@@ -7,7 +7,7 @@ typedef struct {
    int minute;
    int day;
    int month;
-}date_t;
+}time_t;
 
 typedef struct{
    char name[30];
@@ -24,7 +24,7 @@ typedef struct{
    char *location;
    team_t *team1, *team2;
    int score1, score2;
-   date_t time;
+   time_t time;
    char status; // status (not yet, delayed, canceled, finished, in progress)
 }match_t;
 typedef struct{
