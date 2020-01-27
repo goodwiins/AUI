@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define MAX_TEAMS 30
+#define MAX_TEAMS 4 //It's 4 nations per group
 
 typedef struct{
    char name[30];
@@ -95,10 +95,20 @@ void set_match(ranking_t* theranking,team_t* t0,team_t* t1,match_t* m0){
     //sort(theranking); //go back to line 72
  }
 
+show_ranking(ranking_t *theranking){
+   int i;
+   for ( i = 0; i < MAX_TEAMS; i++){
+      printf("Team %d, is at position %d, with ")
+   }
+   
+
+
+}
 int main(void){
    team_t t0,t1;
    ranking_t theranking;
    match_t match;
    set_match(&theranking,&t0,&t1,&match);
    set_ranking(&theranking, &match);
+   show_ranking(&theranking);
 }
