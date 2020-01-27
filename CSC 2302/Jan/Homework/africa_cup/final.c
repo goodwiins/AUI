@@ -22,7 +22,7 @@ typedef struct  {
 }team_t;
 
 typedef struct{
-   char *location;
+   char location[30];
    team_t *team1, *team2;
    int score1, score2;
    date_t time;
