@@ -109,7 +109,7 @@ int main(void){
       ranking_t theranking;
       match_t match;
    
-   add_nations(&theranking);
+   add_team(&theranking);
    set_match(&theranking,&t0,&t1,&match);
    set_ranking(&theranking, &match);
    show_ranking(&theranking);
