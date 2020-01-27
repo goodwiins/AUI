@@ -19,6 +19,8 @@ typedef struct {
 typedef struct  {
    char name[35];
    player_t player[20];
+   int points;
+   int goalsin;
 }team_t;
 
 typedef struct{
@@ -29,12 +31,12 @@ typedef struct{
    char status; // status (not yet, delayed, canceled, finished, in progress)
 }match_t;
 
-typedef struct{
+/*typedef struct{
    team_t teams[MAX_TEAMS];
    int points[MAX_TEAMS];
-   int size;
+   //int size;
 }ranking_t;
-
+*/ //not worth the hustle ""
 
 void set_match(ranking_t* theranking,team_t* t0,team_t* t1,match_t* m0){
    theranking->size =0;
@@ -80,7 +82,6 @@ void set_ranking(ranking_t* theranking,match_t* match) {
     int t1num=0, t2num=1;
     t1 = match->team1;
     t2 = match->team2;
-    
        if (match->score1 > match->score2)
           theranking->points[t1num] +=3;
        else if (match->score2 > match->score1)
@@ -98,18 +99,21 @@ void set_ranking(ranking_t* theranking,match_t* match) {
 show_ranking(ranking_t *theranking){
    
 }
+transfer(ranking_t *theranking){
+
+}
 
 int main(void){
    // it didin't workout in sorting so basically im gonna move on to other stuff
-   ranking_t theRanking;
+   team_t group[MAX_TEAMS];
    int index;
       team_t t0,t1;//for matches 
       ranking_t theranking;
       match_t match;
-   
    add_team(&theranking);
    transfer(&theranking);
-   set_match(&theranking,&t0,&t1,&match);
+   set_match(&theranking,&t0,&t1,&match); //Working 100%
    set_ranking(&theranking, &match);
    show_ranking(&theranking);
+
    }
