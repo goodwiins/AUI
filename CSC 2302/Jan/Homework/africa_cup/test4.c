@@ -75,7 +75,7 @@ void add_teams(team_t *ranking){
 
 }
 
- void set_ranking(ranking_t* theranking,match_t* match) {
+void set_ranking(ranking_t* theranking,match_t* match) {
     team_t *t1, *t2;
     int t1num=0, t2num=1;
     t1 = match->team1;
@@ -93,23 +93,22 @@ void add_teams(team_t *ranking){
    theranking->points[t2num]+= match->score2;
 
     //sort(theranking); //go back to line 72
- }
+}
 
 show_ranking(ranking_t *theranking){
-   int i;
-   for ( i = 0; i < MAX_TEAMS; i++){
-      printf("Team %s, is at position %d, with %d points",theranking->teams->name, );
-   }
+   
+}
 
 int main(void){
    // it didin't workout in sorting so basically im gonna move on to other stuff
-   team_t ranking[MAX_TEAMS];
+   ranking_t theRanking;
    int index;
       team_t t0,t1;//for matches 
       ranking_t theranking;
       match_t match;
    
    add_team(&theranking);
+   transfer(&theranking);
    set_match(&theranking,&t0,&t1,&match);
    set_ranking(&theranking, &match);
    show_ranking(&theranking);
