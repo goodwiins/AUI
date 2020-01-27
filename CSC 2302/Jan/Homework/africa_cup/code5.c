@@ -106,10 +106,7 @@ int main(void){
    team_t team1,team2;//for matches
    match_t match;
    //adding teams
-      team_t t1={.name="team 1",.points=6,.goals=3};
-      team_t t2={.name="team 2",.points=0,.goals=1};
-      team_t t3={.name="team 3",.points=7,.goals=4};
-      team_t t4={.name="team 4",.points=7,.goals=4};
+      
       add_team(group,t1,index++);
       add_team(group,t2,index++);
       add_team(group,t3,index++);
