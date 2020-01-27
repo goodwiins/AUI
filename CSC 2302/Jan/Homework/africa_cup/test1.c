@@ -1,4 +1,4 @@
-#include <stdio.h>
+nb #include <stdio.h>
 //#include "agricacup.h"
 #define MAX_TEAMS 30
 
