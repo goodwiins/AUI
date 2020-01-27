@@ -1,9 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-//#include "agricacup.h"
 #define MAX_TEAMS 30
 
+typedef struct{
+   char name[30];
+   int age;
+   int number;
+}player_t;
 
 typedef struct {
    int hour;
@@ -12,11 +16,6 @@ typedef struct {
    int month;
 }date_t;
 
-typedef struct{
-   char name[30];
-   int age;
-   int number;
-}player_t;
 
 typedef struct  {
    char name[35];
@@ -30,6 +29,7 @@ typedef struct{
    date_t time;
    char status; // status (not yet, delayed, canceled, finished, in progress)
 }match_t;
+
 typedef struct{
    team_t teams[MAX_TEAMS];
    int points[MAX_TEAMS];
@@ -57,19 +57,20 @@ void set_match(ranking_t* theranking,team_t* t0,team_t* t1,match_t* m0){
    
 }
 
-void sort(ranking_t* theranking ){
-   int c,d, array[MAX_TEAMS], swap;
+/*void sort(ranking_t* theranking ){
+   int c,d;
+   ranking_t swap;
    for (c = 0 ; c < MAX_TEAMS - 1; c++){
      for (d = 0 ; d < MAX_TEAMS - c - 1; d++){
-       if (array[d] > array[d+1]) /* For decreasing order use < */{
-         swap = array[d];
-         array[d] = array[d+1];
-         array[d+1] = swap;
+        if (theranking->points[d] < theranking->points[d+1]){
+         swap = theranking[d];
+         theranking[d] = theranking[d+1];
+         theranking[d+1] = swap;
        }
      }
    }
-}
-
+}*/
+// sory function is out of service for the following reason: Thread 1: EXC_BAD_ACCESS (code=1, address=0x7ffeefc48c14)
 
  void set_ranking(ranking_t* theranking,match_t* match) {
     // look in the match, and find the teams. Check which team won.
@@ -80,12 +81,6 @@ void sort(ranking_t* theranking ){
     t1 = match->team1;
     t2 = match->team2;
     
-    /*for(t1num = 0;
-      t1num < MAX_TEAMS && theranking->teams[t1num]!= t1; t1num++);
-    for(t2num = 0;
-      t2num < MAX_TEAMS && theranking->teams[t2num]!= t2;t2num++);
-   // t1num and t2num tell me the array location of the two teams in
-   // the rankings.*/
        if (match->score1 > match->score2)
           theranking->points[t1num] +=3;
        else if (match->score2 > match->score1)
@@ -97,14 +92,13 @@ void sort(ranking_t* theranking ){
    theranking->points[t1num]+= match->score1;
    theranking->points[t2num]+= match->score2;
 
-    sort(theranking);
+    //sort(theranking); //go back to line 72
  }
-
 
 int main(void){
    team_t t0,t1;
    ranking_t theranking;
    match_t match;
    set_match(&theranking,&t0,&t1,&match);
-   printf("%d", theranking.points[0]);
+   set_ranking(&theranking, &match);
 }
