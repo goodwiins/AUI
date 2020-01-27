@@ -16,7 +16,6 @@ typedef struct {
    int month;
 }date_t;
 
-
 typedef struct  {
    char name[35];
    player_t player[20];
@@ -70,12 +69,11 @@ void set_match(ranking_t* theranking,team_t* t0,team_t* t1,match_t* m0){
      }
    }
 }*/
-// sory function is out of service for the following reason: Thread 1: EXC_BAD_ACCESS (code=1, address=0x7ffeefc48c14)
+// sorry the function is out of service for the following reason: Thread 1: EXC_BAD_ACCESS (code=1, address=0x7ffeefc48c14)
+//also i need to make an array of pointers of type team, put pointers there and then sort them by pointes 
+void add_teams()
 
  void set_ranking(ranking_t* theranking,match_t* match) {
-    // look in the match, and find the teams. Check which team won.
-    // Add points to both teams in the ranking.
-    // Adjust the ranking.
     team_t *t1, *t2;
     int t1num=0, t2num=1;
     t1 = match->team1;
@@ -98,16 +96,18 @@ void set_match(ranking_t* theranking,team_t* t0,team_t* t1,match_t* m0){
 show_ranking(ranking_t *theranking){
    int i;
    for ( i = 0; i < MAX_TEAMS; i++){
-      printf("Team %d, is at position %d, with ")
+      printf("Team %s, is at position %d, with %d points",theranking->teams->name, );
    }
    
 
 
 }
 int main(void){
-   team_t t0,t1;
+   team_t t0,t1;//for matches 
    ranking_t theranking;
    match_t match;
+   team_t ranking[MAX_TEAMS];
+   add_nations(&theranking);
    set_match(&theranking,&t0,&t1,&match);
    set_ranking(&theranking, &match);
    show_ranking(&theranking);
