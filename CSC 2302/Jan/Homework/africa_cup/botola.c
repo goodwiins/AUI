@@ -31,9 +31,18 @@ typedef struct{
     int ranking; 
 }team_t;
 
+void add_team(team_t* botola[],team_t* team,int index){
+    botola[index]=team;
+}
+void add_teams(team_t* botola[],int index){
+    team_t botola[0]={.name=""};
+
+}
+
 void main(){
-    team_t botola[TEAMS];
-    
+    team_t* botola[TEAMS];
+    int index=0;
+
 
 
 }
