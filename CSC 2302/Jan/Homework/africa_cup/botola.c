@@ -25,21 +25,15 @@ typedef struct  {
     ranking_t;
 }match_t;
 typedef struct{
-    char name[35];
-    int age;
-    int number;
-    int goals;
-}player_t;
-typedef struct{
-	int size;
     char name[30];
-	player_t player[20]; 
-    ranking_t; 
+	int points;
+    int goals;
+    int ranking; 
 }team_t;
 
 void main(){
-    team_t botola[]
-
+    team_t botola[TEAMS];
+    
 
 
 }
