@@ -8,8 +8,7 @@
 - Structures & Pointers
 ## 2. CSC 2302 Data Structures Spring'20
 - Demonstrate an overall understanding of concepts of structuring data
-- Create, open, read/write from text files
-- Create, open, read/write from binary files
+- Create, open, read/write from text files/binary files
 - Analyze simple code with Big-O notation
 - Apply Dynamic Memory Allocation
 - Create, search, add, delete from linked lists
