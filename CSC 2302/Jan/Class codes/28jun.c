@@ -11,21 +11,6 @@ struct animal animals[100] = {{"Does your animal fly?", 1, 2, ""},
 							  {"", -1, -1, "lion"}};
 int maxanimals = 2;
 int lastquestion;	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	
 void check(int i){
 	char query[10];
