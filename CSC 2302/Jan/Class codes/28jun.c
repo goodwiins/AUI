@@ -66,4 +66,3 @@ void main() {
 		printf("Play again? ");
 		scanf("%s", query);
 		}
-}
