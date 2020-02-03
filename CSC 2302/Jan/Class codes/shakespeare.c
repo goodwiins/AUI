@@ -17,6 +17,5 @@ void main() {
 		fprintf(file, "%s", line);
 		}
 		
-	
 	fclose(file);
 }
