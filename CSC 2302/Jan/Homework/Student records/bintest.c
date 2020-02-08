@@ -2,7 +2,6 @@
 // in working with text and binary files.
 // We wrote data into a binary file, and then read it back
 // with different file types.
-
 #include <stdio.h>
 #include <string.h>
 
