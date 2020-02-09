@@ -1,93 +1,82 @@
-// This was the simple class example to illustrate the difference
-// in working with text and binary files.
-// We wrote data into a binary file, and then read it back
-// with different file types.
-#include <stdio.h>
-#include <string.h>
+// This is the basis for a program to support accessing and updating
+// student information using 2 files, a text file for quick access to 
+// name and index for each student, and a binary file which stores all
+// student data in large records.
 
-char *name = "Kevin"; 
+// Your task is to complete the program (including making sample data
+// files) so that it works correctly.
+#define MAX_COURSES 20
+#define MAX_STUDENTS 50
 
-// This structure is used in the binary file to tell the user
-// what kind of data is coming next, by giving its type and
-// number of values.
+// typedef gives a new name to an existing defined type.
+// Used with struct, it generally looks like:
+//	typedef struct (struct name is omitted) { fields ... } <typename>;
+
+// This structure defines a grade for a student in a course.
 typedef struct {
-	int type,  // type 1 = char, type 2 = int, type 3 = float
-		size;  // size tells how many values to expect
-} output;
+	char courseid[8]; // Example: CSC2302
+	int section;
+	float grade;
+} course;
 
-// This function writes data into the binary file.
-void writefile() {
-	FILE *fp = fopen("test.bin", "wb");
-	output print1 = {1, 6}; // Write 6 characters
-	output print2 = {2, 3}; // Write 3 ints
-	int num[3] = {42, 420, 2020};
-	
-	fwrite(&print1, sizeof(output), 1, fp);
-	fwrite(name, sizeof(char), strlen(name)+1, fp);
-	
-	fwrite(&print2, sizeof(output), 1, fp);
-	fwrite(num, sizeof(int), 3, fp);
-	
-	fclose(fp);
-}
+// This structure defines the set of grades that a student has
+// earned in all courses, i.e. the course history.
+typedef struct {
+	char firstname[15], lastname[15];
+	course courses[MAX_COURSES];
+} studentRecord;
 
-// This function reads the data in the binary file but treats
-// it as text. It works sometimes, but sometimes not depending
-// on what the data is.
-void readfile() {
-	FILE *fp = fopen("test.bin", "r");
-	char name[10];
-	fscanf(fp, "%s", name);
-	fclose(fp);
-	printf("%s\n", name);
-}
+// This is a sample of a collection of many student records;
+// practically, these are all stored in the binary file and
+// never loaded into memory together. 
+//	studentRecord records[MAX_STUDENTS];
 
-typedef struct s {
-	float num[10];
-} num;
+// We only load one record at a time from the binary file.
+studentRecord theRecord;
 
-// These functions read the data in the binary file using the 
-// output descriptors used to create the file.
-// read1 reads one set of data.
-// Since our example wrote 2 sets of data into the file,
-// readfile2 calls read1 twice.
-void read1(FILE *fp) {
-	char name[10];	
-	int nums[10];
-	num mynum;
-	int i;
-	
-	output print; // The output descriptor tells us what data is coming next.
-	fread(&print, sizeof(output), 1, fp);
-	
-	if(print.type == 1) {// read characters into a string
-		fread(name, sizeof(char), print.size, fp);
-		name[print.size] = '\0';
-		printf("%s\n", name);
-	} else if(print.type == 2) {// read ints into an array
-		fread(nums, sizeof(int), print.size, fp);
-		for(i = 0; i < print.size; i++)
-			printf("%d ", nums[i]);
-		printf("\n");
-	} else if(print.type == 3) {// read floats into a structure
-		fread(&mynum, sizeof(float), print.size, fp);
-		for(i = 0; i < print.size; i++)
-			printf("%f ", mynum.num[i]);
-		printf("\n");
+// This structure defines the name used to search for a student.
+// The index of the student in this array is the same as their 
+// index in the studentRecord binary file.
+typedef struct {
+	char firstname[15], lastname[15];
+} studentIndex;
+
+studentIndex indeces[MAX_STUDENTS];
+
+// This function reads the student names from the text file, and stores
+// them in the index array. It assumes that the names are in the same
+// order in the text file as the records are in the binary file.
+void readIndeces(){
+	FILE *infile = fopen("index.txt", "r");
+	int current = 0;
+	while(!feof(infile)) {
+		fscanf(infile, "%s %s", indeces[current].firstname, indeces[current].lastname);
+		current ++;
 	}
+	
 }
 
-void readfile2() {
-	FILE *fp = fopen("test.bin", "rb");
-
-	read1(fp);
-	read1(fp);
-
-	fclose(fp);
+// This function finds the index of a student using their first and last name.
+// Note that this function ASSUMES the student is actually in
+// the list. It will cause an error if they are not.
+// You should probably fix that.
+int findStudent(char *firstname, char *lastname) {
+	int current = 0;
+	while(strcmp(firstname, indeces[current].firstname) || 
+		strcmp(lastname, indeces[current].lastname)) 
+			// This means that one of the names is different, so go
+			// on to the next record.
+			current++;
+	return current;
 }
 
-void main() {
-	writefile();
-//	readfile();
-	readfile2();
+// This function loads the student record for a specific student
+// from the binary file, given the index of that student.
+void fillStudent(int index, studentRecord *student) {
+	FILE *rfile = fopen("student.bin", "rb");
+	fseek(rfile, index*sizeof(studentRecord), SEEK_CUR);
+	fread(student, sizeof(studentRecord), 1, rfile);
+	fclose(rfile);
 }
+
+// Other functions? What do you need to make this work?
