@@ -39,18 +39,18 @@ studentRecord theRecord;
 // index in the studentRecord binary file.
 typedef struct {
 	char firstname[15], lastname[15];
-} studentIndex;
+} studentIndex; 
 
-studentIndex indeces[MAX_STUDENTS];
+studentIndex indexs[MAX_STUDENTS];
 
 // This function reads the student names from the text file, and stores
 // them in the index array. It assumes that the names are in the same
 // order in the text file as the records are in the binary file.
-void readIndeces(){
+void readindexs(){
 	FILE *infile = fopen("index.txt", "r");
 	int current = 0;
 	while(!feof(infile)) {
-		fscanf(infile, "%s %s", indeces[current].firstname, indeces[current].lastname);
+		fscanf(infile, "%s %s", indexs[current].firstname, indexs[current].lastname);
 		current ++;
 	}
 	
@@ -62,8 +62,8 @@ void readIndeces(){
 // You should probably fix that.
 int findStudent(char *firstname, char *lastname) {
 	int current = 0;
-	while(strcmp(firstname, indeces[current].firstname) || 
-		strcmp(lastname, indeces[current].lastname)) 
+	while(strcmp(firstname, indexs[current].firstname) || 
+		strcmp(lastname, indexs[current].lastname)) 
 			// This means that one of the names is different, so go
 			// on to the next record.
 			current++;
