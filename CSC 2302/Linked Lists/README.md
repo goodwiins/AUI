@@ -20,5 +20,6 @@ Another important type of a linked list is called a circular linked list where l
 ## Linked List Operations
 ### addFirst
 The method creates a node and prepends it at the beginning of the list.
-![addFirst](https://github.com/iliassjabali/AUI/blob/master/CSC%202302/Files/Screen%20Shot%202020-02-13%20at%203.53.13%20PM.png)
+![addFirst](https://github.com/iliassjabali/AUI/blob/master/CSC%202302/Linked%20Lists/Screen%20Shot%202020-02-13%20at%203.53.13%20PM.png)
+
 
