@@ -4,5 +4,7 @@
         "test3.C": "cpp",
         "typeinfo": "c",
         "code5.C": "cpp"
-    }
+    },
+    "markdown.allAvailableLanguages": true,
+    "markdown.showToolbar": true
 }
