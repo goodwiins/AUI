@@ -15,4 +15,6 @@ Linked lists that addresses some of the limitation of arrays.
 ## Types of Linked Lists
 1. A **singly linked list** is described above
 2. A **doubly linked list** is a list that has two references, one to the next node and another to previous node.
-
+![doubly linked list](https://github.com/iliassjabali/AUI/blob/master/CSC%202302/Linked%20Lists/doubly%20linked%20lis.png)
+Another important type of a linked list is called a circular linked list where last node of the list points back to the first node (or the head) of the list.
+## The Node class
