@@ -61,7 +61,6 @@ typedef struct [name] {
      ...
 		data_type_n   member_n;
 } struct_name;
- 
 struct_name Var_1, Var_2;
 ```
 Var_1  &  Var_2 are two variables of type struct_name
