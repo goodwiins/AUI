@@ -12,7 +12,7 @@
 - Create, open, read/write from text files/binary files
 - Analyze simple code with Big-O notation
 - Apply Dynamic Memory Allocation
-- Create, search, add, delete from linked lists
+- [Create, search, add, delete from linked lists](https://github.com/iliassjabali/AUI/tree/master/CSC%202302/Linked%20Lists)
 - Create, insert, delete from queues
 - Create, push, pop from stacks
 - Implement simple recursive algorithms
