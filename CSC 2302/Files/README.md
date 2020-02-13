@@ -5,7 +5,7 @@
 
 They are managed by the runtime environment:
 **DO NOT open them or close them**
-![Screen Shot 2020-02-09 at 9.42.49 PM.png](quiver-image-url/EE740010E996140E129E794FA7AF9730.png)
+![Streams](https://github.com/iliassjabali/AUI/blob/master/CSC%202302/Files/File%20Streams.png)
 # File Streams
 Unlike built-in streams
 * They must be declared 
