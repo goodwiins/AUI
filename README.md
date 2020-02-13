@@ -11,8 +11,7 @@
 
 - Demonstrate an overall understanding of concepts of structuring data
 - Create, open, read/write from text files/binary files
-- Analyze simple code with Big-O notation
-- Apply Dynamic Memory Allocation
+- Analyze simple code with Big-O notation and Applied Dynamic Memory Allocation
 - [Create, search, add, delete from linked lists](https://github.com/iliassjabali/AUI/tree/master/CSC%202302/Linked%20Lists)
 - Create, insert, delete from queues
 - Create, push, pop from stacks
